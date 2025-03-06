@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <title>Iniciar Sesión</title>
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>Iniciar Sesión</h2>
+
+      <input
+        type="text"
+        id="login-username"
+        placeholder="Nombre de usuario"
+        required
+      />
+      <input
+        type="password"
+        id="login-password"
+        placeholder="Contraseña"
+        required
+      />
+      <button onclick="loginUser()">Iniciar Sesión</button>
+
+      <p>¿No tienes una cuenta? <a href="registro.html">Regístrate aquí</a></p>
+    </div>
+    <!-- 🔥 Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+
+    <!-- Archivo JS de Autenticación -->
+    <script src="js/registro.js"></script>
+  </body>
+</html>

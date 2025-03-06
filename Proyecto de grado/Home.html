@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EBFPC</title>
+    <link rel="stylesheet" href="css/styleshome.css" />
+  </head>
+  <body>
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+      <h1>EBFPC</h1>
+      <span id="welcomeMessage"></span>
+      <!-- Aquí se mostrará el nombre del usuario -->
+
+      <span class="menu-toggle">☰</span>
+      <ul class="menu">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Redes</a></li>
+        <li><a href="Contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <!-- Contenedores con imágenes y botones -->
+    <div class="contenedor">
+      <div class="tarjeta">
+        <img
+          src="https://eldeportivo.com.co/wp-content/uploads/2024/12/Asi-se-jugaran-los-torneos-colombianos-en-el-2025.jpg"
+          alt="Imagen 1"
+        />
+        <h2>FPC</h2>
+        <p>
+          La Liga BetPlay Dimayor es la máxima categoría del fútbol profesional
+          colombiano. Conformada por los mejores equipos del país, esta
+          competición se disputa anualmente en dos torneos semestrales: Apertura
+          y Finalización.
+        </p>
+        <button onclick="window.location.href='pages/Info1.html'">
+          Leer más
+        </button>
+      </div>
+
+      <div class="tarjeta">
+        <img
+          src="https://diariodeportivo.com.ar/wp-content/uploads/2023/11/descenso-770x400.jpg"
+          alt="Imagen 2"
+        />
+        <h2>Calculadora Ascenso y Descenso</h2>
+        <p>
+          La Calculadora de Ascenso y Descenso permite a los aficionados del
+          fútbol colombiano proyectar el rendimiento de sus equipos en la lucha
+          por ascender o evitar el descenso. Ingresando resultados y puntajes,
+          podrán analizar distintos escenarios del torneo. Ideal para hinchas,
+          analistas y periodistas. ⚽📊
+        </p>
+        <button onclick="window.location.href='pages/Info2.html'">
+          Leer más
+        </button>
+      </div>
+
+      <div class="tarjeta">
+        <img
+          src="https://www.hsbnoticias.com/wp-content/uploads/2024/11/torneo-1-1.jpg"
+          alt="Imagen 3"
+        />
+        <h2>Sistema de ascenso</h2>
+        <p>
+          El Sistema de Ascenso en Colombia define el camino que los equipos de
+          la segunda división deben recorrer para llegar a la Liga BetPlay
+          Dimayor. A lo largo de los años, este formato ha tenido diversas
+          modificaciones con el objetivo de hacer la competencia más justa y
+          emocionante.
+        </p>
+        <button onclick="window.location.href='pages/Info3.html'">
+          Leer más
+        </button>
+      </div>
+
+      <div class="tarjeta">
+        <img
+          src="https://www.elmundo.com/assets/uploads/files/05af5-tema-futbol-colombiano-web.jpg"
+          alt="Imagen 4"
+        />
+        <h2>GOLES FPC</h2>
+        <p>
+          "Videos de Goles del Fútbol Colombiano" – Disfruta de los mejores
+          goles de la Liga Colombiana, momentos destacados y jugadas
+          inolvidables en un solo lugar. ⚽🎥🔥
+        </p>
+        <button onclick="window.location.href='pages/Info4.html'">
+          Leer más
+        </button>
+      </div>
+    </div>
+
+    <script>
+      // Evento para alternar el menú en pantallas pequeñas
+      document
+        .querySelector(".menu-toggle")
+        .addEventListener("click", function () {
+          document.querySelector(".menu").classList.toggle("active");
+        });
+
+      // Obtener el nombre del usuario desde localStorage
+      const username = localStorage.getItem("username");
+
+      // Mostrar el mensaje de bienvenida debajo del título EBFPC
+      const welcomeMessage = document.getElementById("welcomeMessage");
+      if (username) {
+        welcomeMessage.innerText = `Hola, ${username}!`;
+      } else {
+        welcomeMessage.innerText = "Bienvenido!";
+      }
+    </script>
+  </body>
+</html>

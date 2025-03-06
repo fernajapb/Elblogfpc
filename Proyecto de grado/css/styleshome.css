@@ -1,0 +1,99 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* Barra de navegación */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #333;
+  padding: 10px 20px;
+  color: white;
+}
+
+/* Estilos del menú */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+.menu li {
+  display: inline;
+}
+.menu a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Botón para activar el menú en dispositivos móviles */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background: #333;
+    padding: 10px;
+  }
+  .menu.active {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* Contenedores */
+.contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.tarjeta {
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tarjeta img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.tarjeta h2 {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.tarjeta button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.tarjeta button:hover {
+  background: #0056b3;
+}

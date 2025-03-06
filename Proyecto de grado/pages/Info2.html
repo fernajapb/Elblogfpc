@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora Ascenso y Descenso</title>
+  </head>
+  <style>
+    /*CALCUALADORA DESCENSO*/
+    table {
+      width: 80%;
+      border-collapse: collapse;
+      margin: 20px auto;
+    }
+
+    .editable {
+      width: 60px;
+    }
+
+    .team-image {
+      width: 30px;
+      height: 30px;
+    }
+
+    .red-row {
+      background-color: red;
+      color: aliceblue;
+    }
+    /*BOTONES*/
+    button {
+      width: 30%;
+      padding: 10px;
+      background: #007bff;
+      border: none;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+    /*BOTON DE REGRESO*/
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 15px;
+      background: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    a:hover {
+      background: #0056b3;
+    }
+  </style>
+  <body>
+    <!--CALCUALADORA DESCENSO-->
+    <table>
+      <thead>
+        <tr>
+          <th>Pos</th>
+          <th>Equipo</th>
+          <th>PJ</th>
+          <th>PTS</th>
+          <th>PROM</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>20</td>
+          <td>
+            <img
+              alt="Llaneros"
+              class="team-image"
+              src="https://dimayor.com.co/wp-content/uploads/2024/07/LLANEROS-FC.png"
+            />
+            Llaneros
+          </td>
+          <td><input class="editable" id="Pju1" type="number" value="0" /></td>
+          <td><input class="editable" id="Pob1" type="number" value="0" /></td>
+          <td id="Num1"></td>
+        </tr>
+        <tr>
+          <td>19</td>
+          <td>
+            <img
+              alt="Union"
+              class="team-image"
+              src="https://dimayor.com.co/wp-content/uploads/2024/06/UNION-MAGDALENA.png"
+            />Union M.
+          </td>
+          <td><input class="editable" id="Pju2" type="number" value="0" /></td>
+          <td><input class="editable" id="Pob2" type="number" value="0" /></td>
+          <td id="Num2"></td>
+        </tr>
+        <tr>
+          <td>18</td>
+          <td>
+            <img
+              alt="Cali"
+              class="team-image"
+              src="https://dimayor.com.co/wp-content/uploads/2024/06/Deportivo-cali.png"
+            />Dep.Cali
+          </td>
+          <td><input class="editable" id="Pju3" type="number" value="0" /></td>
+          <td><input class="editable" id="Pob3" type="number" value="0" /></td>
+          <td id="Num3"></td>
+        </tr>
+        <tr>
+          <td>17</td>
+          <td>
+            <img
+              alt="Envigado"
+              class="team-image"
+              src="https://dimayor.com.co/wp-content/uploads/2024/06/Envigado.png"
+            />
+            Envigado
+          </td>
+          <td><input class="editable" id="Pju4" type="number" value="0" /></td>
+          <td><input class="editable" id="Pob4" type="number" value="0" /></td>
+          <td id="Num4"></td>
+        </tr>
+        <tr>
+          <td>16</td>
+          <td>
+            <img
+              alt="Chico"
+              class="team-image"
+              src="https://dimayor.com.co/wp-content/uploads/2024/06/Boyaca-chico.png"
+            />Boy.Chico
+          </td>
+          <td><input class="editable" id="Pju5" type="number" value="0" /></td>
+          <td><input class="editable" id="Pob5" type="number" value="0" /></td>
+          <td id="Num5"></td>
+        </tr>
+        <tr>
+          <td>15</td>
+          <td>
+            <img
+              alt="Forta"
+              class="team-image"
+              src="https://dimayor.com.co/wp-content/uploads/2024/06/FORTALEZA-C.E.I.F.png"
+            />Fortaleza
+          </td>
+          <td><input class="editable" id="Pju6" type="number" value="0" /></td>
+          <td><input class="editable" id="Pob6" type="number" value="0" /></td>
+          <td id="Num6"></td>
+        </tr>
+        <tr>
+          <td>14</td>
+          <td>
+            <img
+              alt="Alianza"
+              class="team-image"
+              src="https://dimayor.com.co/wp-content/uploads/2024/06/Alianza-fx.png"
+            />
+            Alianza
+          </td>
+          <td><input class="editable" id="Pju7" type="number" value="0" /></td>
+          <td><input class="editable" id="Pob7" type="number" value="0" /></td>
+          <td id="Num7"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button onclick="actualizarTabla()">Actualizar Tabla</button>
+    <hr />
+
+    <!--CALCUALADORA ASCENSO-->
+
+    <h2>Sistema de Ascenso</h2>
+
+    <label>Campeón 1S:</label>
+    <input type="text" id="campeon1" /><br /><br />
+
+    <label>Campeón 2S:</label>
+    <input type="text" id="campeon2" /><br /><br />
+
+    <label>1ro Recla:</label>
+    <input type="text" id="reclas1" disabled /><br /><br />
+
+    <label>2do Recla:</label>
+    <input type="text" id="reclas2" disabled /><br /><br />
+
+    <label>1ro Recla (No Campeón):</label>
+    <input type="text" id="reclas1nc" disabled /><br /><br />
+
+    <label>2do Recla (No Campeón):</label>
+    <input type="text" id="reclas2nc" disabled /><br /><br />
+
+    <button onclick="mostrarResultados()">Confirmar</button>
+    <br /><br />
+
+    <div id="resultado"></div>
+
+    <a href="../home.html">Volver a la página principal</a>
+  </body>
+  <script>
+    //CALCUALADORA DESCENSO
+    function actualizarTabla() {
+      var table = document.querySelector("table");
+      var tbody = table.querySelector("tbody");
+      var rows = Array.from(tbody.querySelectorAll("tr"));
+
+      // Actualizar el promedio en cada fila
+      rows.forEach((row) => {
+        var partidosJugados =
+          parseFloat(row.querySelector(".editable").value) || 0;
+        var puntosObtenidos =
+          parseFloat(row.querySelectorAll(".editable")[1].value) || 0;
+        var puntaje =
+          partidosJugados !== 0
+            ? (puntosObtenidos / partidosJugados).toFixed(2)
+            : 0;
+        row.querySelector("[id^='Num']").textContent = puntaje;
+      });
+
+      // Ordenar las filas según el promedio (ascendente)
+      rows.sort((a, b) => {
+        var numA = parseFloat(a.querySelector("[id^='Num']").textContent) || 0;
+        var numB = parseFloat(b.querySelector("[id^='Num']").textContent) || 0;
+        return numA - numB; // Orden ascendente
+      });
+
+      // Actualizar la posición y reordenar en el DOM
+      rows.forEach((row, index) => {
+        row.cells[0].textContent = 20 - index; // Actualizar posición
+
+        // Aplicar clase roja a posiciones 20 y 19
+        if (20 - index === 20 || 20 - index === 19) {
+          row.classList.add("red-row");
+        } else {
+          row.classList.remove("red-row");
+        }
+
+        tbody.appendChild(row); // Reorganizar en el DOM
+      });
+    }
+
+    //CALCUALADORA ASCENSO
+    function mostrarResultados() {
+      let campeon1 = document.getElementById("campeon1").value.trim();
+      let campeon2 = document.getElementById("campeon2").value.trim();
+      let reclas1 = document.getElementById("reclas1");
+      let reclas2 = document.getElementById("reclas2");
+      let reclas1nc = document.getElementById("reclas1nc");
+      let reclas2nc = document.getElementById("reclas2nc");
+      let resultadoDiv = document.getElementById("resultado");
+
+      resultadoDiv.innerHTML = ""; // Limpiar mensajes previos
+
+      // Verificar si los campeones son iguales
+      if (campeon1 !== "" && campeon1 === campeon2) {
+        resultadoDiv.innerHTML = `<p style="color: green;">${campeon1} ya ascendió.</p>`;
+        reclas1nc.disabled = false;
+        reclas2nc.disabled = false;
+        reclas1.disabled = true;
+        reclas2.disabled = true;
+        reclas1.value = "";
+        reclas2.value = "";
+      } else {
+        reclas1nc.disabled = true;
+        reclas2nc.disabled = true;
+        reclas1nc.value = "";
+        reclas2nc.value = "";
+
+        // Activar los inputs de reclasificación si los campeones son diferentes
+        if (campeon1 !== "" && campeon2 !== "" && campeon1 !== campeon2) {
+          reclas1.disabled = false;
+          reclas2.disabled = false;
+        } else {
+          reclas1.disabled = true;
+          reclas2.disabled = true;
+          reclas1.value = "";
+          reclas2.value = "";
+        }
+      }
+
+      // Si se llenan los reclas No Campeón, mostrar repechaje
+      if (
+        !reclas1nc.disabled &&
+        reclas1nc.value.trim() !== "" &&
+        reclas2nc.value.trim() !== ""
+      ) {
+        resultadoDiv.innerHTML += `<p style="color: blue;">Repechaje: ${reclas1nc.value.trim()} vs ${reclas2nc.value.trim()}</p>`;
+      }
+
+      // Comparar los valores de reclasificación con los campeones
+      let reclas1Val = reclas1.value.trim();
+      let reclas2Val = reclas2.value.trim();
+
+      if (!reclas1.disabled && reclas1Val !== "" && reclas2Val !== "") {
+        // Caso donde ambos reclas son los mismos que los campeones
+        if (
+          (reclas1Val === campeon1 && reclas2Val === campeon2) ||
+          (reclas1Val === campeon2 && reclas2Val === campeon1)
+        ) {
+          resultadoDiv.innerHTML += `<p style="color: purple;">${reclas1Val} y ${reclas2Val} ambos ascienden.</p>`;
+        }
+        // Nueva condición: Si un campeón se repite en recla
+        else if (
+          (reclas1Val === campeon1 || reclas1Val === campeon2) &&
+          reclas2Val !== campeon1 &&
+          reclas2Val !== campeon2
+        ) {
+          let campeonAscendido = reclas1Val;
+          let campeonEnRepechaje =
+            campeon1 === campeonAscendido ? campeon2 : campeon1;
+          resultadoDiv.innerHTML += `<p style="color: green;">${campeonAscendido} ya ascendió.</p>`;
+          resultadoDiv.innerHTML += `<p style="color: orange;">Repechaje: ${campeonEnRepechaje} vs ${reclas2Val}</p>`;
+        } else if (
+          (reclas2Val === campeon1 || reclas2Val === campeon2) &&
+          reclas1Val !== campeon1 &&
+          reclas1Val !== campeon2
+        ) {
+          let campeonAscendido = reclas2Val;
+          let campeonEnRepechaje =
+            campeon1 === campeonAscendido ? campeon2 : campeon1;
+          resultadoDiv.innerHTML += `<p style="color: green;">${campeonAscendido} ya ascendió.</p>`;
+          resultadoDiv.innerHTML += `<p style="color: orange;">Repechaje: ${campeonEnRepechaje} vs ${reclas1Val}</p>`;
+        }
+        // Gran Final y Repechaje normal
+        else if (
+          reclas1Val !== campeon1 &&
+          reclas1Val !== campeon2 &&
+          reclas2Val !== campeon1 &&
+          reclas2Val !== campeon2
+        ) {
+          resultadoDiv.innerHTML += `<p style="color: red;">Gran Final: ${campeon1} vs ${campeon2}</p>`;
+          resultadoDiv.innerHTML += `<p style="color: orange;">Repechaje: Perdedor Gran Final vs ${reclas1Val}</p>`;
+        }
+      }
+    }
+  </script>
+</html>
